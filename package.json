@@ -2,8 +2,8 @@
   "name": "electron-react-redux-starter-kit",
   "productName": "electron-react-redux-starter-kit",
   "version": "1.0.0",
-  "description": "",
-  "repository": "",
+  "description": "Electron starter kit with React, Redux, Webpack 4, Autoupdater and much more...",
+  "repository": "https://github.com/trembacz/electron-react-redux-starter-kit.git",
   "main": "main.js",
   "scripts": {
     "build": "webpack --colors --hide-modules --config=./webpack.prod.config.js",
@@ -19,9 +19,6 @@
   },
   "author": "Tomasz Rembacz <mm@mm85.org>",
   "license": "MIT",
-  "engines": {
-    "node": ">=9.0.0"
-  },
   "build": {
     "appId": "com.starter.kit",
     "win": {
