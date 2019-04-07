@@ -32,11 +32,12 @@
 :global #app {
     color: #fff;
     font-family: "LatoWeb", "Source Sans Pro", Helvetica, sans-serif;
+    text-align: justify;
     width: 100%;
 }
 
-:global #app {
-    text-align: justify;
+.hidden {
+    display: none;
 }
 
 .container {
@@ -87,4 +88,56 @@ button {
 
 .container-buttons {
     margin-top: 15px;
+}
+
+.progress-container {
+    background: #fff;
+    border-left: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0,0,0,.1);
+    bottom: 0;
+    font-family: "LatoWeb", "Source Sans Pro", Helvetica, sans-serif;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    width: 250px;
+  }
+
+.progress-dynamic {
+    padding-top: 15px;
+}
+
+progress {
+    background: #f3f3f3;
+    border: 0;
+    border-radius: 5px;
+    height: 18px;
+    width: 180px;
+}
+
+progress::-webkit-progress-bar {
+    background: #f3f3f3;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background: -webkit-linear-gradient(top,  #cdeb8e 0%,#219a56 100%);
+    background: linear-gradient(to bottom,  #cdeb8e 0%,#219a56 100%);
+    border-radius: 5px;
+}
+
+.progress-value {
+    color: #555;
+    float: right;
+    font-size: .8em;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 0;
+}
+
+.progress-message {
+    color: #555;
+    display: block;
+    font-size: .8em;
+    padding: 0;
+    text-align: center;
 }

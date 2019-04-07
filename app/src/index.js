@@ -11,17 +11,20 @@ import 'css/global.css';
 
 import { counter } from 'actions';
 import { defaultConfig } from 'global/constants';
+import { appUpdater } from 'global/utils';
 
 const store = configureStore();
 const mainElem = document.getElementById('app');
 const mainWindow = remote.getCurrentWindow();
+
+// check events from autoupdater
+ipc.on('update-info', (event, message, type, data) => { appUpdater(document, event, message, type, data); });
 
 ipc.on('reduxCounter', () => { store.dispatch(counter()); });
 
 if (mainElem) {
     // init local storage
     StoreManager.init(defaultConfig, mainWindow, true);
-
     render(
         <Provider store={store}>
             <Main />
