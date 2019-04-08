@@ -1,4 +1,4 @@
-# electron-react-redux-starter-kit
+# electron-starter-kit
 Electron starter kit with React, Redux, Webpack 4, Autoupdater and much more...
 
 ![](https://i.imgur.com/hws0j5C.png "Application")
@@ -23,8 +23,8 @@ Electron starter kit with React, Redux, Webpack 4, Autoupdater and much more...
 **1. Clone the repository to your local machine by running**
 
 ```bash
-git clone git@github.com:trembacz/electron-react-redux-starter-kit.git
-cd electron-react-redux-starter-kit
+git clone git@github.com:trembacz/electron-starter-kit.git
+cd electron-starter-kit
 ```
 
 **2. Install all dependencies**
