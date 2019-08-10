@@ -14,7 +14,7 @@ isDevelopment && require('electron-reload')(__dirname);
 
 async function createWindow() {
     const { width, height, x, y, maximized } = getPreferences(app, remote, 'preferences', 'windowBounds');
-    mainWindow = new BrowserWindow({ x, y, width, height, maximized, minWidth: 700, minHeight: 700, icon: appIcon, nodeIntegration: false, backgroundColor: '#2f3243' });
+    mainWindow = new BrowserWindow({ x, y, width, height, maximized, minWidth: 700, minHeight: 700, icon: appIcon, webPreferences: { nodeIntegration: true }, backgroundColor: '#2f3243' });
     mainWindow.loadFile('build/index.html');
 
     // set main window
