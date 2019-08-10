@@ -62,7 +62,7 @@ To create application packages you need to run one of the commands.
 
 **2. Publishing packages**
 
-```npm run publish``` or ```yarn publish```
+```npm run publish-app``` or ```yarn publish-app```
 
 ## Autoupdater
 
