@@ -24,12 +24,12 @@
     100% { transform: rotate(360deg); }
 }
 
-:global html, :global body {
+html, body {
     margin: 0;
     padding: 0;
 }
 
-:global #app {
+#app {
     color: #fff;
     font-family: "LatoWeb", "Source Sans Pro", Helvetica, sans-serif;
     text-align: justify;

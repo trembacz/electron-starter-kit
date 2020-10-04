@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -33,7 +33,7 @@ module.exports = {
         hints: false
     },
     plugins: [
-        new ExtractTextPlugin({
+        new MiniCssExtractPlugin({
             filename: 'bundle.css',
             disable: false,
             allChunks: true,
@@ -69,19 +69,27 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                loader: ExtractTextPlugin.extract({
-                    loader: 'css-loader',
-                    options: {
-                        modules: 'global'
+                use: [
+                    {
+                      loader: MiniCssExtractPlugin.loader,
+                      options: {
+                        hmr: true
+                      }
                     },
-                }),
+                    'css-loader'
+                ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?prefix=font/&limit=5000',
-                options: {
-                    modules: false,
-                },
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        limit: false,
+                        encoding: false,
+                        esModule: false,
+                    }
+                }
             },
             {
                 test: /\.(png|jpe?g|gif)$/,

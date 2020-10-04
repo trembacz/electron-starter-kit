@@ -5,7 +5,7 @@ const { installExtensions, getPreferences } = require('./app/src/global/utils.js
 
 let mainWindow;
 const isDevelopment = process.env.NODE_ENV === 'development';
-const appIcon = (process.platform !== 'win32') ? `${__dirname}/app/src/assets/logo.png` : `${__dirname}/app/src/assets/logo.ico`;
+// const appIcon = (process.platform !== 'win32') ? `${__dirname}/app/src/assets/logo.png` : `${__dirname}/app/src/assets/logo.ico`;
 
 const menuManager = new MenuManager();
 const updateManager = new UpdateManager();
@@ -14,7 +14,7 @@ isDevelopment && require('electron-reload')(__dirname);
 
 async function createWindow() {
     const { width, height, x, y, maximized } = getPreferences(app, remote, 'preferences', 'windowBounds');
-    mainWindow = new BrowserWindow({ x, y, width, height, maximized, minWidth: 700, minHeight: 700, icon: appIcon, webPreferences: { nodeIntegration: true }, backgroundColor: '#2f3243' });
+    mainWindow = new BrowserWindow({ x, y, width, height, maximized, minWidth: 700, minHeight: 700, webPreferences: { enableRemoteModule: true, nodeIntegration: true }, backgroundColor: '#2f3243' });
     mainWindow.loadFile('build/index.html');
 
     // set main window
